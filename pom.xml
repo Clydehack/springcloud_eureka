@@ -2,14 +2,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!-- 以上为maven相关 -->
 	
-	<!-- 引入springboot依赖 -->
+	<!-- 继承父工程，SpringBoot自动添加很多依赖，省的自己添加 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.3.RELEASE</version>
+		<version>1.5.9.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
+	<!-- 项目简介（版本、打包方式） -->
+	<groupId>com.ant</groupId>
+	<artifactId>springcloud-eureka</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
+	<!-- 名称和描述 -->
+	<name>springcloud-eureka</name>
+	<description>服务治理</description>
+
+	<!-- 编码格式、版本 -->
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
+	</properties>
 	
 	<!-- 引入springcloud依赖 -->
 	<dependencyManagement>
@@ -17,26 +34,14 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Camden.SR4</version>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-	<!-- 项目说明 -->
-	<groupId>com.ant</groupId>
-	<artifactId>springcloud-eureka</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>springcloud-eureka</name>
-	<description>服务治理组件</description>
 
-	<!-- 工具版本 -->
-	<properties>
-		<java.version>1.8</java.version>
-		<spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
-	</properties>
-
+	<!-- maven 依赖 -->
 	<dependencies>
 		<!-- 服务治理 - 服务端 -->
 		<dependency>
@@ -91,7 +96,6 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
-		
 	</dependencies>
 
 	<build>
