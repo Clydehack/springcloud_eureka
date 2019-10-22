@@ -12,6 +12,19 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
+	<!-- 引入springcloud依赖 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
 	<!-- 项目简介（版本、打包方式） -->
 	<groupId>com.ant</groupId>
 	<artifactId>springcloud-eureka</artifactId>
@@ -27,19 +40,6 @@
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
 	</properties>
-	
-	<!-- 引入springcloud依赖 -->
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<!-- maven 依赖 -->
 	<dependencies>
